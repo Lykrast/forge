@@ -1,0 +1,12 @@
+Name:Who's That Praetor?
+ManaCost:6
+Types:Sorcery
+A:SP$ Charm | Random$ True | Choices$ Elesh,Jin,Sheoldred,Urabrask,Vorinclex,Ebon | CharmNum$ 1 | AdditionalDescription$ . Create a token that's a copy of that card.
+SVar:Elesh:DB$ CopyPermanent | DefinedName$ Elesh Norn, Mother of Machines | SpellDescription$ Elesh Norn, Mother of Machines
+SVar:Jin:DB$ CopyPermanent | DefinedName$ Jin-Gitaxias, Progress Tyrant | SpellDescription$ Jin-Gitaxias, Progress Tyrant
+SVar:Sheoldred:DB$ CopyPermanent | DefinedName$ Sheoldred, the Apocalypse | SpellDescription$ Sheoldred, the Apocalypse
+SVar:Urabrask:DB$ CopyPermanent | DefinedName$ Urabrask, Heretic Praetor | SpellDescription$ Urabrask, Heretic Praetor
+SVar:Vorinclex:DB$ CopyPermanent | DefinedName$ Vorinclex, Monstrous Raider | SpellDescription$ Vorinclex, Monstrous Raider
+SVar:Ebon:DB$ CopyPermanent | DefinedName$ Ebon Praetor | SpellDescription$ Ebon Praetor
+DeckHas:Ability$Token & Type$Phyrexian|Praetor
+Oracle:Choose one at random. Create a token that's a copy of the chosen card.\n• Elesh Norn, Mother of Machines\n• Jin-Gitaxias, Progress Tyrant\n• Sheoldred, the Apocalypse\n• Urabrask, Heretic Praetor\n• Vorinclex, Monstrous Raider\n• Ebon Praetor

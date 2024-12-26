@@ -1,0 +1,12 @@
+Name:Form of the Stax Player
+ManaCost:5 W
+Types:Enchantment
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ You | TriggerZones$ Battlefield | Execute$ TrigName | TriggerDescription$ At the beginning of your upkeep, create a token that's a copy of one of the following at random: Aven Mindcensor, Drannith Magistrate, Ghostly Prison, Hushbringer, Smokestack, or Thalia, Guardian of Thraben.
+SVar:TrigName:DB$ NameCard | AtRandom$ True | ChooseFromList$ Aven Mindcensor,Drannith Magistrate,Ghostly Prison,Hushbringer,Smokestack,Thalia; Guardian of Thraben | SubAbility$ DBToken
+SVar:DBToken:DB$ CopyPermanent | DefinedName$ NamedCard | RememberTokens$ True | SubAbility$ DBCleanup1
+SVar:DBCleanup1:DB$ Cleanup | ClearNamedCard$ True
+T:Mode$ ChangesZone | Origin$ Battlefield | Destination$ Any | ValidCard$ Card.Self | Execute$ TrigSacrifice | TriggerDescription$ When CARDNAME leaves the battlefield, sacrifice each token created with it.
+SVar:TrigSacrifice:DB$ SacrificeAll | ValidCards$ Card.IsRemembered | SubAbility$ DBCleanup2
+SVar:DBCleanup2:DB$ Cleanup | ClearRemembered$ True
+DeckHas:Ability$Token & Type$Bird|Human|Wizard|Faerie|Artifact|Soldier
+Oracle:At the beginning of your upkeep, create a token that's a copy of one of the following at random: Aven Mindcensor, Drannith Magistrate, Ghostly Prison, Hushbringer, Smokestack, or Thalia, Guardian of Thraben. (There are six of them, so one easy way to select is to roll a D6.)\nWhen Form of the Stax Player leaves the battlefield, sacrifice each token created with it. 
